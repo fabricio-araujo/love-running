@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* General styles */
 body {
     min-height: 100vh;
     display: flex;
@@ -14,15 +18,13 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #252525;
-}
-
-.hidden-heading {
-    display: none;
 }
 
 /* Header */
@@ -43,14 +45,13 @@ header a {
     color: inherit;
 }
 
-
 #menu {
     font-size: 110%;
     letter-spacing: 4px;
     list-style-type: none;
 }
 
-#menu > li {
+#menu>li {
     margin-bottom: 1em;
 }
 
@@ -59,7 +60,6 @@ header a {
 }
 
 /* Navbar styles with dropdown toggle */
-
 nav {
     position: absolute;
     background-color: #ffffff;
@@ -72,7 +72,6 @@ nav {
 }
 
 /* Nav toggle */
-
 #nav-toggle:checked~nav {
     display: block;
 }
@@ -87,12 +86,12 @@ nav {
 
 /* Main content */
 main {
-    
-    /* Make main element take up any surplues space to push footer down */
+    /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     margin-top: 47px;
 }
 
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
@@ -112,24 +111,25 @@ main {
     padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2,
+#cover-text>h3 {
     color: #ffffff;
 }
 
+/* Reasons section */
 #reasons {
     width: 90%;
     margin: 20px auto;
 }
 
 #reasons h2 {
-    text-transform: uppercase;
-    font-size: 280%;
     margin-bottom: 20px;
     text-align: center;
+    font-size: 280%;
 }
 
-#benefits-physical > div, 
-#benefits-mental > div {
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
 }
@@ -143,7 +143,24 @@ main {
     margin: 5px 0;
 }
 
-/* Meetup section */
+#circle-cover-bg {
+    background: url('../images/reasons-image.webp') no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Meetup Times section */
 #times {
     background: url('../images/dublin-city.webp') no-repeat center/cover;
     /* Handles responsivity without the need for a media query */
@@ -160,7 +177,7 @@ main {
     Each div will expand to fill the available space on its row */
     flex-basis: 200px;
     flex-grow: 1;
-    /* Creates a grid of meetup times div over the background image */
+    /* Creates a grid of meetup time divs over the background image */
     border: 2px solid white;
 }
 
@@ -184,25 +201,9 @@ main {
     color: #3a3a3a;
 }
 
-#circle-cover-bg {
-    background-image: url('../images/reasons-image.webp') no-repeat top center / cover;
-    height: 90vw;
-    width: 90vw;
-    margin-bottom: 20px;
-    border-radius: 50%;
-    max-width: 300px;
-    max-height: 300px;
-}
-
-#benefits-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* Media query: tablets and larger (768px and up) */
-
 @media screen and (min-width: 768px) {
+
     /* Header */
     nav {
         display: block;
@@ -216,10 +217,10 @@ main {
         display: flex;
     }
 
-    #menu > li {
+    #menu>li {
         padding-left: 1rem;
     }
-    
+
     .nav-toggle-label {
         display: none;
     }
@@ -230,8 +231,9 @@ main {
         margin: 0 0.5rem;
     }
 
+    /* Main content */
     main {
-        /* Push main content down to accomodate larger header */
+        /* Push main content down to accommodate larger header */
         margin-top: 79px;
     }
 
@@ -249,26 +251,26 @@ main {
         width: 100%;
     }
 
-    #benefits-physical > div,
-    #benefits-mental > div {
+    #benefits-physical>div,
+    #benefits-mental>div {
         width: 75%;
     }
 
-    #benefits-mental > div {
+    #benefits-mental>div {
         text-align: end;
         align-self: flex-end;
     }
-
 }
 
+/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
 }
 
-@media screen and (min-width: 1200px) {
-    /*  Reasons section */
+@media screen and (min-width: 1200px) {    
+    /* Reasons section */
     #benefits {
         display: flex;
         flex-direction: row;
@@ -279,7 +281,7 @@ main {
     }
 
     #benefits-image {
-        order: 0;
+        order: 0
     }
 
     #benefits-mental {
@@ -290,7 +292,7 @@ main {
         align-self: flex-start;
     }
 
-    #benefits-physical {
+    #benefits-physical > div {
         align-self: flex-end;
     }
 }
